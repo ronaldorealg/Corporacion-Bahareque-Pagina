@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/png" href="/imagenes/logociclon.png">
+
+
+</script>
+
+</head>
+<body>
+
+<!-- Modal Galería -->
+<div id="galeriaModal" class="modal">
+  <div class="modal-content" id="modalContent">
+    
+
+    <div class="slides"><img src="/imagenes/imagen1.jpg" alt="Imagen 1"></div>
+    <div class="slides"><img src="/imagenes/imagen2.jpg" alt="Imagen 2"></div>
+    <div class="slides"><img src="/imagenes/imagen3.jpg" alt="Imagen 3"></div>
+    <div class="slides"><img src="/imagenes/imagen4.jpg" alt="Imagen 4"></div>
+    <div class="slides"><img src="/imagenes/imagen5.jpg" alt="Imagen 5"></div>
+    <div class="slides"><img src="/imagenes/imagen6.jpg" alt="Imagen 6"></div>
+    <div class="slides"><img src="/imagenes/imagen7.jpg" alt="Imagen 7"></div>
+    <div class="slides"><img src="/imagenes/imagen8.jpg" alt="Imagen 8"></div>
+  </div>
+</div>
+<style>
+/* Modal */
+    .modal {
+      display: block;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+      position: relative;
+      margin: 5% auto;
+      width: 80%;
+      max-width: 700px;
+    }
+
+    .slides {
+      display: none;
+    }
+
+    .slides img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      color: #fff;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      color: red;
+    }
+  </style>
+
+<script>
+  function cerrarModal() {
+    document.getElementById('galeriaModal').style.display = "none";
+  }
+
+  let slideIndex = 0;
+  function mostrarSlides() {
+    const slides = document.getElementsByClassName("slides");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) slideIndex = 1;
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(mostrarSlides, 3000); // Cambia cada 3 segundos
+  }
+
+  window.onload = function () {
+    mostrarSlides();
+  };
+
+  // También cerrar al hacer clic fuera del contenido
+  window.onclick = function (event) {
+    const modal = document.getElementById('galeriaModal');
+    const content = document.getElementById('modalContent');
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
+
+</body>
+</html>
+<head>
+<link rel="icon" type="image/png" href="/imagenes/logociclon.png">
+  <title>Corporación Bahareque</title>
+</head>
+<!-- Video de fondo (fondopagina.mp4) -->
+<video autoplay muted loop playsinline id="video-fondo" style="position:fixed; top:0; left:0; width:100vw; height:100vh; object-fit:cover; z-index:-2;">
+  <source src="/videos/fondopagina.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video.
+</video>
+<!-- Capa de fondo PNG muy transparente -->
+<div style="position:fixed; top:0; left:0; width:100vw; height:100vh; background: url('/imagenes/fondo.png') no-repeat center center fixed; background-size: cover; opacity:0.90; z-index:-1; pointer-events:none;"></div>
+<div style="text-align: center; color: rgb(0, 0, 0); padding: 20px; position:relative; z-index:1;">
+  <div class="fb-page" 
+    data-href="/home/kali/Escritorio/logociclon.png" 
+    data-tabs="timeline" 
+    data-width="" 
+    data-height="500" 
+    data-small-header="false" 
+    data-adapt-container-width="true" 
+    data-hide-cover="false" 
+    data-show-facepile="true">
+  </div>
+</div>
+<section id="inicio">
+  <!-- Aquí se mostrarán los participantes -->
+</section>
+<style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000000;
+      color: #000000;
+    }
+
+    header {
+      background-color: #000000;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #090909;
+    }
+
+    .buscador input {
+      padding: 8px;
+      width: 250px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      color: #000000;
+    }
+    @keyframes circle-in-hesitate {
+  0% {
+    clip-path: circle(0%);
+  }
+  40% {
+    clip-path: circle(40%);
+  }
+  100% {
+    clip-path: circle(125%);
+  }
+}
+
+[transition-style="in:circle:hesitate"] {
+  animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-in-hesitate both;
+}
+    .formulario-login, .formulario-registro {
+      background: #000000;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 400px;
+      margin: 30px auto;
+    }
+
+    .formulario-login input,
+    .formulario-registro input,
+    .formulario-login button,
+    .formulario-registro button {
+      width: 100%;
+      margin-bottom: 12px;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .formulario-login button,
+    .formulario-registro button {
+      background-color: #ffffff;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .formulario-login button:hover,
+    .formulario-registro button:hover {
+      background-color: #000000;
+    }
+
+    .formulario {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 500px;
+      margin: 30px auto;
+    }
+
+    .formulario input,
+    .formulario button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .formulario button {
+      background-color: #ffffff;
+      color: #000000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .carousel {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 60px;
+    }
+
+    .producto {
+      display: inline-block;
+      background: #000000;
+      width: 240px;
+      margin-right: 15px;
+      border-radius: 10px;
+      overflow: hidden;
+      vertical-align: top;
+      transition: transform 0.3s;
+    }
+
+    .producto:hover {
+      transform: scale(1.05);
+    }
+
+    .producto img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .producto-info {
+      padding: 10px;
+    }
+
+    .producto-info h3 {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .precio {
+      color: #080808;
+      font-weight: bold;
+    }
+
+    .btn-comprar {
+      background-color: #ffffff;
+      color: white;
+      padding: 8px;
+      border: none;
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-comprar:hover {
+      background-color: #ffffff;
+    }
+
+    a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url('/home/kali/Escritorio/Captura de pantalla_2025-05-08_16-05-15.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      color: #ffffff;
+    }
+  </style>
+</head>
+  <header style="display: flex; align-items: center; justify-content: center; position: relative; background: #000; padding: 20px 0;">
+    <h1 style="color: #fff; text-align: center; flex: 1; margin: 0; font-size: 2.2rem;">Corporación Bahareque</h1>
+    <div style="position: absolute; right: 30px; display: flex; gap: 20px;">
+      <button onclick="window.location.href='articulosdeBahareque.html'" style="background: #000; color: #fff; border: none; padding: 10px 22px; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer;">Artículos</button>
+      <button onclick="window.location.href='historia.html'" style="background: #000; color: #fff; border: none; padding: 10px 22px; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer;">Historia</button>
+      <button id="btn-cerrar-sesion" onclick="cerrarSesion()" class="cerrar-sesion" style="display: none;">
+        ⎋ Cerrar sesión
+      </button>
+    </div>
+  </header>
+      <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      padding: px;
+    }
+    h1 {
+      color: #0000000e;
+    }
+    .botones {
+      margin-top: 30px;
+    }
+    .boton {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 30px;
+      font-size: 18px;
+      color: white;
+      background-color: #000000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+    .boton:hover {
+      background-color: #00000036;
+    }
+  </style>
+</head>
+<body>
+  <div class="botones">
+    <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
+    }
+    nav {
+      background-color: black;
+      padding: 10px 20px;
+      display: flex;
+      gap: 10px;
+    }
+    button.btn-nav {
+      color: white;
+      background: black;
+      border: 1px solid white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    button.btn-nav:hover {
+      background-color: white;
+      color: black;
+    }
+    #contenido {
+      padding: 20px;
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #111;
+      border-radius: 8px;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+<style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
+    }
+    nav {
+      background-color: black;
+      padding: 10px 20px;
+      display: flex;
+      gap: 10px;
+    }
+    button.btn-nav {
+      color: white;
+      background: black;
+      border: 1px solid white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    button.btn-nav:hover {
+      background-color: white;
+      color: black;
+    }
+    #contenido {
+      padding: 20px;
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #111;
+      border-radius: 8px;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+
+
+
+</body>
+</html>
+     
+
+<style>
+.cerrar-sesion {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cerrar-sesion:hover {
+  background-color: #000000;
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 600px) {
+  .cerrar-sesion {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: #111;
+  overflow: hidden;
+  cursor: none; /* Oculta el cursor real */
+}
+
+#camera-cursor {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  pointer-events: none;
+  box-shadow: 0 0 12px rgba(0, 255, 0, 0.8);
+  border: 2px solid lime;
+  z-index: 1000;
+}
+
+#camera-cursor video {
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+  transform: scaleX(-1); /* Efecto espejo */
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<h1>Mueve el mouse — La cámara te sigue</h1>
+<div id="camera-cursor">
+  <video id="video" autoplay playsinline muted></video>
+</div>
+
+<script>
+  const cursor = document.getElementById("camera-cursor");
+  const video = document.getElementById("video");
+
+  // Mover el div con la cámara según el mouse
+  document.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.clientX - cursor.offsetWidth / 2 + "px";
+    cursor.style.top = e.clientY - cursor.offsetHeight / 2 + "px";
+  });
+
+  // También funciona en pantallas táctiles
+  document.addEventListener("touchmove", (e) => {
+    const touch = e.touches[0];
+    cursor.style.left = touch.clientX - cursor.offsetWidth / 2 + "px";
+    cursor.style.top = touch.clientY - cursor.offsetHeight / 2 + "px";
+  });
+
+  // Acceder a la cámara
+  async function startCamera() {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      video.srcObject = stream;
+    } catch (err) {
+      alert("No se pudo acceder a la cámara: " + err.message);
+    }
+  }
+
+  startCamera();
+</script>
+
+</body>
+</html>
+</style>
+
+</header>
+
+<main>
+  <!-- Vista de Login -->
+  <div id="login-view" class="container">
+    <div class="formulario-login">
+      <h2 style="color: white; text-align: center;">Iniciar sesión</h2>
+      <input type="email" id="login-email" placeholder="Correo electrónico" />
+      <input type="password" id="login-password" placeholder="Contraseña" />
+      <button onclick="iniciarSesion()">Iniciar sesión</button>
+      <p>¿No tienes cuenta? <a href="#" onclick="mostrarRegistro()">Regístrate aquí</a></p>
+    </div>
+  
+  <div id="token-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); align-items:center; justify-content:center; z-index:2000;">
+    <div style="background:#fff; color:#000; padding:30px; border-radius:10px; max-width:350px; margin:auto; text-align:center;">
+      <h3>Verifica tu correo</h3>
+      <p>Ingresa el token que recibiste por correo electrónico:</p>
+      <input type="text" id="input-token" placeholder="Token de verificación" style="width:90%; padding:8px; margin-bottom:12px;" />
+      <button onclick="verificarToken()" style="padding:8px 18px;">Verificar</button>
+      <button onclick="cerrarTokenModal()" style="padding:8px 18px; margin-left:10px;">Cancelar</button>
+    </div>
+  </div>
+  <div id="modal-imagen" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); align-items:center; justify-content:center;">
+    <img id="imagen-modal" style="max-width:90%; max-height:90%;" />
+    <button onclick="cerrarModal()" style="position:absolute; top:20px; right:20px; background:red; color:white;">Cerrar</button>
+  </div>
+</main>
+<script>
+
+  
+  // Cambia las siguientes URLs por las de tu backend real
+  const API_URL = "http://localhost:1000/api";
+
+  function validarEmail(email) {
+    // Debe contener @ y un dominio válido
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function validarPassword(password) {
+    // Al menos 1 mayúscula, 1 minúscula, 10 números y 1 signo
+    return /^(?=.*[a-z])(?=.*[A-Z])(?=(?:.*\d){10,})(?=.*[\W_]).{12,}$/.test(password);
+  }
+
+  function iniciarSesion() {
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+
+    if (!validarEmail(email)) {
+      alert("El correo debe ser válido y contener '@'.");
+      return;
+    }
+
+    fetch(`${API_URL}/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        alert("Bienvenido a Corporación Bahareque");
+        document.getElementById("login-view").style.display = "none";
+        document.getElementById("formulario-producto").style.display = "block";
+        document.getElementById("btn-cerrar-sesion").style.display = "inline-block";
+        document.getElementById("lista-productos").style.display = "block";
+        localStorage.setItem("token", data.token);
+        mostrarProductos(data.productos || []);
+      } else {
+        alert(data.message || "Correo o contraseña incorrectos.");
+      }
+    })
+    .catch(() => alert("Error al iniciar sesión"));
+  }
+
+  function registrarUsuario() {
+    const email = document.getElementById('registro-email').value;
+    const password = document.getElementById('registro-password').value;
+    const confirmPassword = document.getElementById('registro-password-confirm').value;
+
+    if (!validarEmail(email)) {
+      alert("El correo debe ser válido y contener '@'.");
+      return;
+    }
+    if (!validarPassword(password)) {
+      alert("La contraseña debe tener al menos 1 mayúscula, 1 minúscula, 10 números y 1 signo.");
+      return;
+    }
+    if (password !== confirmPassword) {
+      alert("Las contraseñas no coinciden.");
+      return;
+    }
+
+    fetch(`${API_URL}/register`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        document.getElementById("token-modal").style.display = "flex";
+        localStorage.setItem("pendingEmail", email);
+      } else {
+        alert(data.message || "No se pudo registrar.");
+      }
+    })
+    .catch(() => alert("Error al registrar usuario"));
+  }
+
+  function verificarToken() {
+    const token = document.getElementById("input-token").value;
+    const email = localStorage.getItem("pendingEmail");
+    if (!token || !email) {
+      alert("Faltan datos para la verificación.");
+      return;
+    }
+    fetch(`${API_URL}/verify`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, token })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        alert("Registro verificado. Ahora puedes iniciar sesión.");
+        cerrarTokenModal();
+        mostrarLogin();
+      } else {
+        alert(data.message || "Token incorrecto.");
+      }
+    })
+    .catch(() => alert("Error al verificar token"));
+  }
+
+  function cerrarTokenModal() {
+    document.getElementById("token-modal").style.display = "none";
+    localStorage.removeItem("pendingEmail");
+  }
+
+  // Guardar miembro en la carpeta uploads del backend (no en localStorage)
+  function guardarInformacion() {
+    const nombre = document.getElementById('nombre').value;
+    const descripcion = document.getElementById('descripcion').value;
+    const mediaInput = document.getElementById('media');
+    const archivo = mediaInput.files[0];
+    const token = localStorage.getItem("token");
+
+    if (!nombre || !descripcion || !archivo) {
+      alert("Completa todos los campos y selecciona una imagen.");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("nombre", nombre);
+    formData.append("descripcion", descripcion);
+    formData.append("imagen", archivo);
+
+    fetch(`${API_URL}/miembros`, {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${token}`
+      },
+      body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        alert("Miembro guardado correctamente.");
+        window.location.href = "articulosdeBahareque.html";
+      } else {
+        alert(data.message || "No se pudo guardar el miembro.");
+      }
+    })
+    .catch(() => alert("Error al guardar el miembro"));
+  }
+</script>
+<!-- Aquí van los íconos -->
+  <style>
+  .social-icons img {
+    width: 40px;
+    height: 40px;
+  }
+  
+</style>
+<div class="social-icons">
+  <!-- Facebook -->
+  <a href="https://www.facebook.com/colectivobaharequem" target="_blank" title="Ir a Facebook">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" style="width:25px; height:25px;">
+  </a>
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/colectivobaharequem" target="_blank" title="Ir a Instagram">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" style="width:25px; height:25px;">
+  </a>
+</div>
+    
+  </div>
+    <style>@keyframes circle-in-hesitate {
+  0% {
+    clip-path: circle(0%);
+  }
+  40% {
+    clip-path: circle(40%);
+  }
+  100% {
+    clip-path: circle(125%);
+  }
+}
+
+[transition-style="in:circle:hesitate"] {
+  animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-in-hesitate both;
+}</style>
+<style>
+    .social-container {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .social-title {
+      background-color: #000000;
+      color: white;
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      display: inline-block;
+      text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .social-icons img {
+      width: 25px;
+      height: 25px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  
+  <center>
+  <h2 class="social-title">Síguenos en redes sociales</h2>
+</center>
+    <!-- Vista de Registro -->
+    <div id="registro-view" class="container" style="display: none;">
+      <div class="formulario-registro">
+        <h2 style="color: white; text-align: center;">REGÍSTRATE</h2>
+        <form id="form-registro" onsubmit="event.preventDefault(); registrarUsuario();">
+          <div class="campo">
+            <label for="registro-email" style="color:white;">Correo electrónico</label>
+            <input type="email" id="registro-email" placeholder="Correo electrónico" required />
+          </div>
+          <div class="campo">
+            <label for="registro-password" style="color:white;">Contraseña</label>
+            <input type="password" id="registro-password" placeholder="Contraseña" required />
+          </div>
+          <div class="campo">
+            <label for="registro-password-confirm" style="color:white;">Confirmar contraseña</label>
+            <input type="password" id="registro-password-confirm" placeholder="Confirmar contraseña" required />
+          </div>
+          <div class="campo">
+            <label for="registro-nombres" style="color:white;">Nombres</label>
+            <input type="text" id="registro-nombres" placeholder="Tus nombres" required />
+          </div>
+          <div class="campo">
+            <label for="registro-apellidos" style="color:white;">Apellidos</label>
+            <input type="text" id="registro-apellidos" placeholder="Tus apellidos" required />
+          </div>
+          <div class="campo">
+            <label for="registro-numero-personas" style="color:white;">¿Cuántas personas son?</label>
+            <input type="number" id="registro-numero-personas" min="1" placeholder="Número de personas" required />
+          </div>
+          <button type="submit">Registrar</button>
+        </form>
+        <p>¿Ya tienes cuenta? <a href="#" onclick="mostrarLogin()">Inicia sesión</a></p>
+        <ul style="color: #fff; text-align: left; margin-top: 10px; font-size: 0.95em;">
+          <li>La contraseña debe tener al menos 1 mayúscula</li>
+          <li>Al menos 1 minúscula</li>
+          <li>Al menos 10 números</li>
+          <li>Al menos 1 signo o carácter especial</li>
+          <li>Mínimo 12 caracteres</li>
+        </ul>
+       </div>
+    </div>
+    <html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Juego Cámara - Atrapa el círculo</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #222;
+    color: #fff;
+    text-align: center;
+    margin: 0; padding: 0;
+  }
+  #video {
+    border-radius: 12px;
+    max-width: 90vw;
+    max-height: 60vh;
+  }
+  #gameCanvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  #score {
+    margin-top: 10px;
+    font-size: 1.4rem;
+  }
+  #container {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+  }
+  #instructions {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #ccc;
+  }
+</style>
+</head>
+<body>
+<div id="contenedor-participantes"></div>
+
+<script src="formulario.js"></script>
+      <style>
+  .formulario {
+    background-color: rgb(0, 0, 0);
+    color: rgb(254, 254, 254);
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgb(0, 0, 0);
+    text-align: center;
+  }
+
+  .formulario input[type="text"],
+  .formulario input[type="file"],
+  .formulario button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    font-family: inherit;
+  }
+
+  .formulario input[type="text"] {
+    background-color: black;
+    color: white;
+  }
+
+  .formulario input[type="file"] {
+    background-color: black;
+    color: white;
+  }
+
+  .formulario input[type="file"]::file-selector-button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .formulario button {
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .formulario button:hover {
+    background-color: #333;
+  }
+
+  .formulario h2 {
+    color: black;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+</style>
+
+    <!-- Carrusel de productos -->
+    <div class="carousel" id="lista-productos"></div>
+  </main>
+<script>
+  function eliminarParticipante(id) {
+    if (confirm("¿Estás seguro de que quieres eliminar este participante?")) {
+      fetch(`/api/participantes/${id}`, {
+        method: 'DELETE'
+      })
+      .then(res => {
+        if (res.ok) {
+          alert("Participante eliminado");
+          location.reload(); // o eliminar el elemento del DOM dinámicamente
+        } else {
+          alert("No se pudo eliminar el participante");
+        }
+      })
+      .catch(err => console.error("Error:", err));
+    }
+  }
+</script>
+
+  <script>
+    const contenedor = document.getElementById("lista-productos");
+    const buscar = document.getElementById("buscar");
+
+    let productos = JSON.parse(localStorage.getItem("productos")) || [];
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    function mostrarProductos(lista) {
+  const carrusel = document.getElementById("lista-productos");
+  carrusel.innerHTML = "";
+  lista.forEach(p => {
+    carrusel.innerHTML += `
+      <div class="producto">
+        <img src="${p.imagen}" alt="${p.nombre}" onclick="abrirImagen('${p.imagen}')" style="cursor:pointer;" />
+        <div class="producto-info">
+          <h3>${p.nombre}</h3>
+          <p>${p.descripcion}</p>
+        </div>
+      </div>
+    `;
+  });
+}
+function eliminarProducto(index) {
+  if (confirm("¿Seguro que quieres eliminar este producto?")) {
+    productos.splice(index, 1);
+    localStorage.setItem("productos", JSON.stringify(productos));
+    mostrarProductos(productos);
+  }
+}
+function abrirImagen(src) {
+  const modal = document.getElementById("modal-imagen");
+  const imagen = document.getElementById("imagen-modal");
+
+  imagen.src = src;
+  modal.style.display = "flex";
+}
+    function buscarProductos() {
+      const texto = buscar.value.toLowerCase();
+      const filtrados = productos.filter(p =>
+        p.nombre.toLowerCase().includes(texto) ||
+        p.descripcion.toLowerCase().includes(texto)
+      );
+      mostrarProductos(filtrados);
+    }
+
+    function agregarProducto() {
+  const nombre = document.getElementById('nombre').value;
+  const descripcion = document.getElementById('descripcion').value;
+  const mediaInput = document.getElementById('media');
+  const archivo = mediaInput.files[0];
+
+  if (!nombre || !descripcion || !archivo) {
+    alert("Completa todos los campos y selecciona una imagen.");
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    const nuevoProducto = {
+      nombre,
+      descripcion,
+      imagen: e.target.result
+    };
+    productos.push(nuevoProducto);
+    localStorage.setItem("productos", JSON.stringify(productos));
+    mostrarProductos(productos);
+    document.getElementById('nombre').value = '';
+    document.getElementById('descripcion').value = '';
+    document.getElementById('media').value = '';
+  };
+  reader.readAsDataURL(archivo);
+}
+
+function limpiarCampos() {
+  document.getElementById('nombre').value = "";
+  document.getElementById('descripcion').value = "";
+  document.getElementById('media').value = "";
+}
+function iniciarSesion() {
+  const email = document.getElementById('login-email').value;
+  const password = document.getElementById('login-password').value;
+
+  const usuario = usuarios.find(u => u.email === email && u.password === password);
+
+  if (usuario) {
+  alert("Bienvenido a Corporación Bahareque");
+  document.getElementById("login-view").style.display = "none";
+  document.getElementById("formulario-producto").style.display = "block";
+  document.getElementById("btn-cerrar-sesion").style.display = "inline-block";
+  document.getElementById("lista-productos").style.display = "block"; // <--- mostrar productos
+  mostrarProductos(productos);
+  } else {
+    alert("Correo o contraseña incorrectos.");
+  }
+}
+function cerrarSesion() {
+  document.getElementById("formulario-producto").style.display = "none";
+  document.getElementById("login-view").style.display = "block";
+  document.getElementById("btn-cerrar-sesion").style.display = "none";
+  document.getElementById("lista-productos").style.display = "none"; // <--- ocultar productos
+}
+    function registrarUsuario() {
+      const email = document.getElementById('registro-email').value;
+      const password = document.getElementById('registro-password').value;
+      const confirmPassword = document.getElementById('registro-password-confirm').value;
+
+      if (password !== confirmPassword) {
+        alert("Las contraseñas no coinciden.");
+        return;
+      }
+
+      if (usuarios.some(u => u.email === email)) {
+        alert("Ya existe una cuenta con ese correo.");
+        return;
+      }
+
+      usuarios.push({ email, password });
+      localStorage.setItem("usuarios", JSON.stringify(usuarios));
+      alert("Registro exitoso. Ahora puedes iniciar sesión.");
+      mostrarLogin();
+    }
+
+    function mostrarLogin() {
+      document.getElementById("login-view").style.display = "block";
+      document.getElementById("registro-view").style.display = "none";
+    }
+
+    function mostrarRegistro() {
+      document.getElementById("login-view").style.display = "none";
+      document.getElementById("registro-view").style.display = "block";
+    }
+
+    mostrarProductos(productos);
+    buscar.addEventListener("input", buscarProductos);
+    document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    cerrarModal();
+  }
+});
+
+function cerrarModal() {
+  const modal = document.getElementById("modal-imagen");
+  const imagen = document.getElementById("imagen-modal");
+  imagen.src = "";
+  modal.style.display = "none";
+}
+  </script>
+  
+  <div id="modal-imagen" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:1000;">
+    <img id="imagen-modal" src="" style="max-width:90%; max-height:90%;" />
+  </div>
+  <div id="modal-editar" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center;">
+    <div style="background:#ffffff; padding:20px; border-radius:10px; width:300px; position:relative;">
+      <h2>Editar Producto</h2>
+      <label>Nombre:</label>
+      <input type="text" id="editar-nombre"><br><br>
+      <label>Descripción:</label>
+      <textarea id="editar-descripcion"></textarea><br><br>
+      <label>URL Imagen:</label>
+      <input type="text" id="editar-imagen"><br><br>
+      <button onclick="guardarEdicion()">Guardar</button>
+      <button onclick="cerrarModal()">Cancelar</button>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <footer style="width:100%; background:rgba(0,0,0,0.85); color:#fff; text-align:center; padding:18px 0 12px 0; position:fixed; left:0; bottom:0; font-size:16px; z-index:100; box-shadow:0 -2px 12px rgba(0,0,0,0.5);"></footer>
+    Derechos de Autor: Ronaldo J Avila - Corporación Bahareque
+    <br>
+    <span style="font-size:12px; color:#bbb;"></span>
+      © Todos los derechos reservados. Queda prohibida la reproducción total o parcial de este sitio web, incluyendo textos, imágenes y cualquier otro contenido, sin la autorización expresa del titular de los derechos.
+    </span>
+  </footer>
+  
